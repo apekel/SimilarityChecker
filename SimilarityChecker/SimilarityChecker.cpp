@@ -8,22 +8,24 @@ public:
 	{
 		if (IsSame(input1, input2))
 		{
-			return 60;
+			return MAX_SCORE_OF_COUNT_CHECK;
 		}
 
 		if (IsMoreThanTwiceLength(input1, input2))
 		{
-			return 0;
+			return ZERO_SCORE;
 		}
+
+		int longInput = input2.length();
+		int shortInput = input1.length();
 
 		if (IsInput1Longer(input1, input2))
 		{
-			return (1 - (input1.length() - input2.length()) / input2.length()) * 60;
+			longInput = input1.length();
+			shortInput = input2.length();
 		}
-		else
-		{
-			return (1 - (input2.length() - input1.length()) / input1.length()) * 60;
-		}
+
+		return (2 * shortInput - longInput) * 60 / shortInput;
 	}
 	bool IsSame(const string& input1, const std::string& input2)
 	{
@@ -41,4 +43,7 @@ public:
 		return input1.length() > input2.length();
 	}
 
+private:
+	const int MAX_SCORE_OF_COUNT_CHECK = 60;
+	const int ZERO_SCORE = 0;
 };
