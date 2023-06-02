@@ -34,8 +34,8 @@ public:
 		int SameAlphabetCount = GetSameAlphabetCount(input1, input2);
 
 		if (SameAlphabetCount == ALPLABET_COUNT)
-			return 40;
-		return SameAlphabetCount / GetAlphabetCount(input1 + input2) * 40;
+			return MAX_SCORE_OF_ALPHABET_CHECK;
+		return SameAlphabetCount / GetAlphabetCount(input1 + input2) * MAX_SCORE_OF_ALPHABET_CHECK;
 	}
 
 	bool IsSame(const string& input1, const std::string& input2)
@@ -101,6 +101,7 @@ public:
 
 private:
 	const int MAX_SCORE_OF_COUNT_CHECK = 60;
+	const int MAX_SCORE_OF_ALPHABET_CHECK = 40;
 	const int ZERO_SCORE = 0;
 	const int ALPLABET_COUNT = 'Z' - 'A' + 1;
 };
