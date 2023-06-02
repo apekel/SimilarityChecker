@@ -9,7 +9,7 @@ TEST(CheckCount, Same)
 	EXPECT_EQ(60, similarityChecker.CheckCount(input1, input2));
 }
 
-TEST(CheckCount, Diff1)
+TEST(CheckCount, DiffWithTwiceLength)
 {
 	SimilarityChecker similarityChecker;
 	string input1 = "ABC";
@@ -17,7 +17,7 @@ TEST(CheckCount, Diff1)
 	EXPECT_EQ(0, similarityChecker.CheckCount(input1, input2));
 }
 
-TEST(CheckCount, Diff2)
+TEST(CheckCount, DiffInput1Long)
 {
 	SimilarityChecker similarityChecker;
 	string input1 = "ABCAB";
@@ -25,7 +25,7 @@ TEST(CheckCount, Diff2)
 	EXPECT_EQ((1 - (5-3)/3)*60, similarityChecker.CheckCount(input1, input2));
 }
 
-TEST(CheckCount, Diff3)
+TEST(CheckCount, DiffInput2Long)
 {
 	SimilarityChecker similarityChecker;
 	string input1 = "ABC";
